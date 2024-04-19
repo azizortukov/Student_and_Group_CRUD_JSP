@@ -27,10 +27,18 @@ public class AuthServlet extends HttpServlet {
             String hpw = userOptional.get().getPassword();
             if (BCrypt.checkpw(password, hpw)) {
                 req.getSession().setAttribute("currentUser", userOptional.get());
-                setCookieToUser(userOptional.get(), resp);
+                //check the checkBox
+
+                    setCookieToUser(userOptional.get(), resp);
                 resp.sendRedirect("/admin/student.jsp");
                 return;
             }
+        }
+        Optional<User> userByCookie = userRepo.getUserByCookie(req.getCookies());
+        if (userByCookie.isPresent()) {
+            req.getSession().setAttribute("currentUser", userByCookie.get());
+            resp.sendRedirect("/admin/student.jsp");
+            return;
         }
         resp.sendRedirect("/login.jsp?multiple=true");
     }
