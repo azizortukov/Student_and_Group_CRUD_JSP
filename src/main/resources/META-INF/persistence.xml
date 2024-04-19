@@ -8,9 +8,9 @@
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/project1_db"/>
-            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
-            <property name="jakarta.persistence.jdbc.password" value="0545"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="jakarta.persistence.jdbc.user" value="anas"/>
+            <property name="jakarta.persistence.jdbc.password" value="whassup["/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
 </persistence>
