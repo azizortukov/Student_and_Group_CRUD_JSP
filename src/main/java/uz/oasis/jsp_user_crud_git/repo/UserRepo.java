@@ -30,11 +30,14 @@ public class UserRepo extends BaseRepo<User, UUID> {
     }
 
     public Optional<User> getUserByCookie(Cookie[] cookies) {
+        if (cookies == null) {
+            return Optional.empty();
+        }
         for (Cookie cookie : cookies) {
-            System.out.println(cookie.getName());
             if (cookie.getName().equals("userId")) {
                 UUID userId = UUID.fromString(cookie.getValue());
-                return Optional.ofNullable(em.find(User.class, userId));
+                User user = em.find(User.class, userId);
+                return Optional.ofNullable(user);
             }
         }
         return Optional.empty();
