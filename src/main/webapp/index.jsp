@@ -3,6 +3,8 @@
 <%@ page import="uz.oasis.jsp_user_crud_git.repo.GroupRepo" %>
 <%@ page import="uz.oasis.jsp_user_crud_git.repo.StudentRepo" %>
 <%@ page import="uz.oasis.jsp_user_crud_git.repo.UserRepo" %>
+<%@ page import="java.util.Optional" %>
+<%@ page import="uz.oasis.jsp_user_crud_git.entity.User" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +18,9 @@
 <%
     StudentRepo studentRepo = new StudentRepo();
     GroupRepo groupRepo = new GroupRepo();
+    UserRepo userRepo = new UserRepo();
     List<Student> students = studentRepo.findAll();
+    Optional<User> currentUser = userRepo.getUserBySession(request.getSession());
     %>
 
 <nav class="navbar bg-body-tertiary bg-light">
@@ -25,8 +29,18 @@
             <input name="name" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success ms-4" type="submit">Search</button>
         </form>
-        <form class=" justify-content-end" >
-            <button class="btn btn-outline-success me-2" type="button">Login</button>
+        <form class=" justify-content-end">
+            <% if (currentUser.isPresent()) { %>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= currentUser.get().getUsername()%>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Edit Student</a></li>
+                <li><a class="dropdown-item" href="#">Edit Group</a></li>
+            </ul>
+            <% }else { %>
+            <a class="btn btn-outline-success me-2" type="button" href="/login.jsp">Login</a>
+            <% } %>
         </form>
     </div>
 </nav>

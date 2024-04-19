@@ -9,22 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe6b1bd-2412-41d5-980c-61a6ad17c73b" name="Changes" comment="Project's dependecies created an">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/config/DBInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/entity/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/entity/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/repo/BaseRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/repo/GroupRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/repo/StudentRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/repo/UserRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/servlet/StudentServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/servlet/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4fe6b1bd-2412-41d5-980c-61a6ad17c73b" name="Changes" comment="Homepage, User, Student, Group entities has been created.">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/student.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/repo/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/servlet/AuthServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -227,7 +218,7 @@
       <workItem from="1713460275059" duration="1811000" />
       <workItem from="1713462343598" duration="1455000" />
       <workItem from="1713463990998" duration="590000" />
-      <workItem from="1713512269019" duration="8818000" />
+      <workItem from="1713512269019" duration="12029000" />
     </task>
     <task id="LOCAL-00001" summary="Project's dependecies created an">
       <option name="closed" value="true" />
@@ -245,7 +236,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713464317627</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Homepage, User, Student, Group entities has been created.">
+      <option name="closed" value="true" />
+      <created>1713521517005</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713521517005</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Homepage, User, Student, Group entities has been created.">
+      <option name="closed" value="true" />
+      <created>1713521597690</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713521597690</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +260,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project's dependecies created an" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project's dependecies created an" />
+    <MESSAGE value="Homepage, User, Student, Group entities has been created." />
+    <option name="LAST_COMMIT_MESSAGE" value="Homepage, User, Student, Group entities has been created." />
   </component>
 </project>
