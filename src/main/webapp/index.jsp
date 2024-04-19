@@ -26,7 +26,6 @@
     if (parameter != null) {
         TypedQuery<Student> query = em.createQuery("select s from Student s where firstName like :search or lastName like :search", Student.class);
         query.setParameter("search", "%" + parameter + "%");
-        System.out.println(parameter);
         students = query.getResultList();
     }
     Optional<User> currentUser = userRepo.getUserBySession(request.getSession());
