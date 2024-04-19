@@ -9,12 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fe6b1bd-2412-41d5-980c-61a6ad17c73b" name="Changes" comment="Homepage, User, Student, Group entities has been created.">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/student.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+    <list default="true" id="4fe6b1bd-2412-41d5-980c-61a6ad17c73b" name="Changes" comment="Login page has been created">
+      <change afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/filter/GeneralFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/addStudent.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/editStudent.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/repo/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/servlet/AuthServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/servlet/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/servlet/AuthServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/servlet/StudentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/oasis/jsp_user_crud_git/servlet/StudentServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/student.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/student.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -83,7 +86,6 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 10.1.20.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -218,7 +220,7 @@
       <workItem from="1713460275059" duration="1811000" />
       <workItem from="1713462343598" duration="1455000" />
       <workItem from="1713463990998" duration="590000" />
-      <workItem from="1713512269019" duration="12029000" />
+      <workItem from="1713512269019" duration="18490000" />
     </task>
     <task id="LOCAL-00001" summary="Project's dependecies created an">
       <option name="closed" value="true" />
@@ -252,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713521597690</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Login page has been created">
+      <option name="closed" value="true" />
+      <created>1713524527095</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713524527095</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +271,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project's dependecies created an" />
     <MESSAGE value="Homepage, User, Student, Group entities has been created." />
-    <option name="LAST_COMMIT_MESSAGE" value="Homepage, User, Student, Group entities has been created." />
+    <MESSAGE value="Login page has been created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login page has been created" />
   </component>
 </project>

@@ -31,12 +31,13 @@
         </form>
         <form class=" justify-content-end">
             <% if (currentUser.isPresent()) { %>
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle btn btn-outline-success" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <%= currentUser.get().getUsername()%>
             </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Edit Student</a></li>
-                <li><a class="dropdown-item" href="#">Edit Group</a></li>
+                <li><a class="dropdown-item" href="/admin/student.jsp">Edit Student</a></li>
+                <li><a class="dropdown-item" href="/admin/group.jsp">Edit Group</a></li>
+                <li><a class="dropdown-item" href="/auth?userId=<%=currentUser.get().getId()%>">Log out</a></li>
             </ul>
             <% }else { %>
             <a class="btn btn-outline-success me-2" type="button" href="/login.jsp">Login</a>
@@ -71,6 +72,6 @@
         </table>
     </div>
 </div>
-
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </html>

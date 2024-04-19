@@ -2,6 +2,7 @@ package uz.oasis.jsp_user_crud_git.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,18 +23,38 @@ public class AuthServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         Optional<User> userOptional = userRepo.findByUsername(username);
-        System.out.println("djklsf");
         if (userOptional != null && userOptional.isPresent()) {
             String hpw = userOptional.get().getPassword();
-            System.out.println("whassup");
             if (BCrypt.checkpw(password, hpw)) {
                 req.getSession().setAttribute("currentUser", userOptional.get());
+                setCookieToUser(userOptional.get(), resp);
                 resp.sendRedirect("/admin/student.jsp");
-                System.out.println("balo battar");
                 return;
             }
         }
-        System.out.println("wtf");
         resp.sendRedirect("/login.jsp?multiple=true");
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getSession().removeAttribute("currentUser");
+        for (Cookie cookie : req.getCookies()) {
+            if (cookie.getName().equals("userId")) {
+                cookie.setMaxAge(0);
+                cookie.setPath("/");
+                cookie.setSecure(false);
+                resp.addCookie(cookie);
+                resp.sendRedirect("/");
+                return;
+            }
+        }
+    }
+
+    private void setCookieToUser(User user, HttpServletResponse resp) {
+        Cookie cookie = new Cookie("userId", user.getId().toString());
+        cookie.setSecure(false);
+        cookie.setPath("/");
+        cookie.setMaxAge(60*60*24);
+        resp.addCookie(cookie);
     }
 }
