@@ -22,14 +22,15 @@ public class AuthServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        String parameter = req.getParameter("remember_me");
         Optional<User> userOptional = userRepo.findByUsername(username);
         if (userOptional != null && userOptional.isPresent()) {
             String hpw = userOptional.get().getPassword();
             if (BCrypt.checkpw(password, hpw)) {
                 req.getSession().setAttribute("currentUser", userOptional.get());
-                //check the checkBox
-
+                if (parameter != null) {
                     setCookieToUser(userOptional.get(), resp);
+                }
                 resp.sendRedirect("/admin/student.jsp");
                 return;
             }
@@ -42,6 +43,7 @@ public class AuthServlet extends HttpServlet {
         }
         resp.sendRedirect("/login.jsp?multiple=true");
     }
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -62,7 +64,8 @@ public class AuthServlet extends HttpServlet {
         Cookie cookie = new Cookie("userId", user.getId().toString());
         cookie.setSecure(false);
         cookie.setPath("/");
-        cookie.setMaxAge(60*60*24);
+        cookie.setMaxAge(60 * 60 * 24);
         resp.addCookie(cookie);
     }
+
 }

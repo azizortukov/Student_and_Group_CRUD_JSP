@@ -1,4 +1,5 @@
-<%--
+<%@ page import="uz.oasis.jsp_user_crud_git.entity.Student" %>
+<%@ page import="uz.oasis.jsp_user_crud_git.servlet.AuthServlet" %><%--
   Created by IntelliJ IDEA.
   User: anas
   Date: 19/04/24
@@ -9,6 +10,7 @@
 <html>
 <head>
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Login</title>
@@ -16,25 +18,30 @@
         body {
             background-color: #f8f9fa; /* lighter background color */
         }
+
         .login-container {
             margin-top: 100px;
         }
+
         .login-form {
             max-width: 400px;
             margin: 0 auto;
             background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
+
         .login-form input[type="text"],
         .login-form input[type="password"] {
             margin-bottom: 20px;
         }
+
         .login-btn {
             background-color: limegreen;
             border-color: limegreen;
         }
+
         .login-btn:hover {
             background-color: limegreen;
             border-color: limegreen;
@@ -59,6 +66,10 @@
             </div>
             <div class="form-group">
                 <input name="password" type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="form-group form-check">
+                <input name="remember_me" type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
             </div>
             <button type="submit" class="btn btn-lg btn-block login-btn text-white">Login</button>
         </form>
