@@ -28,6 +28,7 @@ public class StudentServlet extends HttpServlet {
             Integer studentId = Integer.parseInt(req.getParameter("id"));
             studentRepo.deleteById(studentId);
         }
+
     }
 
     @Override
