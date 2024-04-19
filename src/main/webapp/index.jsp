@@ -5,6 +5,8 @@
 <%@ page import="uz.oasis.jsp_user_crud_git.repo.UserRepo" %>
 <%@ page import="java.util.Optional" %>
 <%@ page import="uz.oasis.jsp_user_crud_git.entity.User" %>
+<%@ page import="jakarta.persistence.TypedQuery" %>
+<%@ page import="static uz.oasis.jsp_user_crud_git.repo.BaseRepo.em" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +22,20 @@
     GroupRepo groupRepo = new GroupRepo();
     UserRepo userRepo = new UserRepo();
     List<Student> students = studentRepo.findAll();
+    String parameter = request.getParameter("search-name");
+    if (parameter != null) {
+        TypedQuery<Student> query = em.createQuery("select s from Student s where firstName like :search or lastName like :search", Student.class);
+        query.setParameter("search", "%" + parameter + "%");
+        System.out.println(parameter);
+        students = query.getResultList();
+    }
     Optional<User> currentUser = userRepo.getUserBySession(request.getSession());
     %>
 
 <nav class="navbar bg-body-tertiary bg-light">
     <div class="container">
-        <form class="d-flex" role="search" action="/search" method="post">
-            <input name="name" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" role="search" action="/" method="get">
+            <input name="search-name" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success ms-4" type="submit">Search</button>
         </form>
         <form class=" justify-content-end">
@@ -40,6 +49,7 @@
                 <li><a class="dropdown-item" href="/auth?userId=<%=currentUser.get().getId()%>">Log out</a></li>
             </ul>
             <% }else { %>
+
             <a class="btn btn-outline-success me-2" type="button" href="/login.jsp">Login</a>
             <% } %>
         </form>

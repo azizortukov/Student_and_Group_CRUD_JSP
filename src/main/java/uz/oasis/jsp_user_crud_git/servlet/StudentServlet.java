@@ -27,6 +27,7 @@ public class StudentServlet extends HttpServlet {
             studentRepo.deleteById(studentId);
             resp.sendRedirect("/admin/student.jsp");
         }
+
     }
 
     @Override
