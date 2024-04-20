@@ -54,10 +54,9 @@ public class AuthServlet extends HttpServlet {
                 cookie.setPath("/");
                 cookie.setSecure(false);
                 resp.addCookie(cookie);
-                resp.sendRedirect("/");
-                return;
             }
         }
+        resp.sendRedirect("/");
     }
 
     private void setCookieToUser(User user, HttpServletResponse resp) {
