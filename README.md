@@ -26,6 +26,11 @@ This project is a Java web application for managing students and groups using JS
 - **Password Encryption**: User passwords are encrypted using bcrypt before storing them in the database. During login, the password entered by the user is hashed and compared with the hashed password retrieved from the database for authentication.
 - **Error Notification**: If the user enters incorrect credentials during login, the login page displays a notification informing them that either the email or password is wrong and prompts them to try again.
 
+  <img src="screenshots/login%20page.jpg" alt="Project Screenshot" width="300">
+  <img src="screenshots/main%20page.jpg" alt="Project Screenshot" width="300">
+  <img src="screenshots/admin%20page.jpg" alt="Project Screenshot" width="300">
+
+
 ## Installation and Setup
 
 1. Clone the repository to your local machine:
