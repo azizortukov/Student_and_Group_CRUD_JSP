@@ -17,6 +17,7 @@ This project is a Java web application for managing students and groups using JS
 ## Features
 
 - **CRUD Operations**: Allows creating, reading, updating, and deleting both students and groups.
+- **Search Engine**: The main page includes a search engine where users can be searched with the similarity of first name or last name.
 - **Secure Admin Pages**: Access to admin pages is restricted to authenticated users only.
 - **Login Page**: Provides a login page for user authentication.
 - **Remember Me Checkbox**: Users can choose to stay logged in even after the session is disconnected by checking the "Remember Me" checkbox.
