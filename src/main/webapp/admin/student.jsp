@@ -27,7 +27,7 @@
         <form class="">
             <a class="btn btn-outline-success me-4" type="button" href="/">Back</a>
             <a class="btn btn-outline-success mx-4" type="button" href="/admin/addStudent.jsp">Add Student</a>
-            <a class="btn btn-outline-secondary mx-4" type="button" href="/admin/group.jsp">Group's CRUD</a>
+            <a class="btn btn-outline-secondary mx-4" type="button" href="/admin/group.jsp">Groups' CRUD</a>
         </form>
     </div>
 </nav>

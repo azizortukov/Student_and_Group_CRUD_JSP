@@ -35,23 +35,25 @@
     <div class="container">
         <form class="d-flex" role="search" action="/" method="get">
             <input name="search-name" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success ms-4" type="submit">Search</button>
+            <button class="btn btn-outline-success ml-4" type="submit">Search</button>
         </form>
-        <form class=" justify-content-end">
+        <form class="justify-content-end">
             <% if (currentUser.isPresent()) { %>
-            <a class="nav-link dropdown-toggle btn btn-outline-success" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <%= currentUser.get().getUsername()%>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/admin/student.jsp">Edit Student</a></li>
-                <li><a class="dropdown-item" href="/admin/group.jsp">Edit Group</a></li>
-                <li><a class="dropdown-item" href="/auth?userId=<%=currentUser.get().getId()%>">Log out</a></li>
-            </ul>
-            <% }else { %>
-
-            <a class="btn btn-outline-success me-2" type="button" href="/login.jsp">Login</a>
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle btn btn-outline-success" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= currentUser.get().getUsername()%>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/admin/student.jsp">Edit Student</a>
+                    <a class="dropdown-item" href="/admin/group.jsp">Edit Group</a>
+                    <a class="dropdown-item" href="/auth?userId=<%=currentUser.get().getId()%>">Log out</a>
+                </div>
+            </div>
+            <% } else { %>
+            <a class="btn btn-outline-success mr-2" type="button" href="/login.jsp">Login</a>
             <% } %>
         </form>
+
     </div>
 </nav>
 
@@ -82,5 +84,7 @@
     </div>
 </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </html>

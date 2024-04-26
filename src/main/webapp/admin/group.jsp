@@ -28,6 +28,8 @@
         <form >
             <a class="btn btn-outline-success me-4" type="button" href="/index.jsp">Back</a>
             <a class="btn btn-outline-success mx-4" type="button" href="/admin/addGroup.jsp">Add Group</a>
+            <a class="btn btn-outline-secondary mx-4" type="button" href="/admin/student.jsp">Students' CRUD</a>
+
         </form>
     </div>
 </nav>
